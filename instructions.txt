@@ -1,0 +1,11 @@
+things to note:
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///:memory:' need to do this instead of app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
+as google enviroment is read-only.cannot create new files.so use sqlite:///:memory:' which is some sort of in memory.means data wont persisit 
+once session closed
+
+
+debug using:
+functions-framework --target hello_http  --debug  (make sure the name:"hello" matches the function name in main.py)             
+
+pushed to gcf using:
+gcloud functions deploy hello --trigger-http --runtime=python311
