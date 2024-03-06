@@ -88,6 +88,8 @@ class VideoList(Resource):
 
 api.add_resource(VideoList, "/videos")
 api.add_resource(Video,"/video/<int:video_id>")
-
+@app.route("/")
+def index():
+    return "Welcome to my Flask API!"
 if __name__ =="__main__":
     app.run(debug=True)
