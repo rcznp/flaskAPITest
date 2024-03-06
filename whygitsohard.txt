@@ -1,6 +1,11 @@
+<<<<<<< HEAD
 #this one cannot work on google cloud functions as it creates a new file in env,which gcf does not allow
 
+backup for test.py
+=======
 
+#code from https://www.youtube.com/watch?v=GMppyAPbLYk
+>>>>>>> origin/main
 from flask import Flask,request,jsonify,redirect
 from flask_restful import Api, Resource,reqparse,abort,fields,marshal_with
 from flask_sqlalchemy import SQLAlchemy
@@ -43,7 +48,11 @@ resorce_fields ={
 class Video(Resource):
     @marshal_with(resorce_fields)#serialize the returned values  with the resources field dict
     def get(self,video_id):
+<<<<<<< HEAD
         result = VideoModel.query.filter_by(id=video_id).first()
+=======
+        result = VideoModel.query.filter_by(id=video_id)
+>>>>>>> origin/main
         if not result:
             abort(404,message="Coukld not find video with that id")
         return result
@@ -95,4 +104,8 @@ api.add_resource(Video,"/video/<int:video_id>")
 def index():
     return "Welcome to my Flask API!"
 if __name__ =="__main__":
+<<<<<<< HEAD
     app.run(debug=True)
+=======
+    app.run(debug=True)
+>>>>>>> origin/main
