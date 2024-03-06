@@ -1,3 +1,5 @@
+
+#code from https://www.youtube.com/watch?v=GMppyAPbLYk
 from flask import Flask,request,jsonify,redirect
 from flask_restful import Api, Resource,reqparse,abort,fields,marshal_with
 from flask_sqlalchemy import SQLAlchemy
